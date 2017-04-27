@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
     //liste des commerces
     ArrayList<Commerces> listCommerces ;
 
-    private static RecyclerView.Adapter adapter;
+    private RecyclerView.Adapter adapter;
 
     private RecyclerView.LayoutManager layoutManager;
 
@@ -128,6 +128,7 @@ public class MainActivity extends Activity {
 
                     }
 
+                    adapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {
                     e.printStackTrace();

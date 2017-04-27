@@ -30,7 +30,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/textViewName"
+                    android:id="@+id/textLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -39,13 +39,23 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
 
                 <TextView
-                    android:id="@+id/textViewVersion"
+                    android:id="@+id/textCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
 
                     android:text="City"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+                <TextView
+                    android:id="@+id/textPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+
+                    android:text="Coordonnées"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             </LinearLayout>

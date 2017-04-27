@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -15,15 +14,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     private ArrayList<Commerces> dataSet;
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewName;
-        TextView textViewVersion;
+        public TextView textLabel;
+        public TextView textCity;
+        public TextView textPoint;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            this.textViewName = (TextView) itemView.findViewById(R.id.textViewName);
-            this.textViewVersion = (TextView) itemView.findViewById(R.id.textViewVersion);
+            this.textLabel = (TextView) itemView.findViewById(R.id.textLabel);
+            this.textCity = (TextView) itemView.findViewById(R.id.textCity);
+            this.textPoint = (TextView) itemView.findViewById(R.id.textPoint);
+
         }
     }
 
@@ -46,14 +48,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int listPosition) {
 
-        TextView textViewName = holder.textViewName;
-        TextView textViewVersion = holder.textViewVersion;
 
-        textViewName.setText(dataSet.get(listPosition).getLabel());
-        textViewVersion.setText(dataSet.get(listPosition).getCity());
+        holder.textLabel.setText(dataSet.get(listPosition).getLabel());
+        holder.textCity.setText(dataSet.get(listPosition).getCity());
+        holder.textPoint.setText("("+dataSet.get(listPosition).getPoint().latitude+","+dataSet.get(listPosition).getPoint().longitude+")");
 
     }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
     @Override
     public int getItemCount() {
         return dataSet.size();
